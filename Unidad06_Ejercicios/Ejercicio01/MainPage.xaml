@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio01.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            x:Name="VSL"
+            Padding="30,0"
+            Spacing="25">
+
+
+            <Button 
+                x:Name="btnBoton1" 
+                Text="Boton1"
+                BackgroundColor="Aqua"
+                MaximumHeightRequest="70"
+                MaximumWidthRequest="200"
+                FontFamily="Verdana"
+                FontAttributes="Bold"
+                BorderColor="Yellow"
+                BorderWidth="5"
+                Margin="5"
+                />
+
+            <Button x:Name="btnBoton2" Clicked="OnCounterClickedBtn02">
+                <Button.Text>Boton 2</Button.Text>
+                <Button.BackgroundColor>Red</Button.BackgroundColor>
+                <Button.MaximumHeightRequest>70</Button.MaximumHeightRequest>
+                <Button.MaximumWidthRequest>200</Button.MaximumWidthRequest>
+                <Button.FontFamily>Verdana</Button.FontFamily>
+                <Button.FontAttributes>Bold</Button.FontAttributes>
+                <Button.BorderColor>Yellow</Button.BorderColor>
+                <Button.BorderWidth>5</Button.BorderWidth>
+                <Button.Margin>5</Button.Margin>
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio02.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Slider
+                x:Name="slider"
+                VerticalOptions="Center"
+                ThumbColor="Aqua"
+                Minimum="0"
+                Maximum="1"
+            />
+            
+            
+
+            <ProgressBar BindingContext="{x:Reference slider}"
+               x:Name="pBar"
+               Progress="{Binding Value}"
+               VerticalOptions="Center"
+               WidthRequest="200"
+               HorizontalOptions="End"
+                                        
+             />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

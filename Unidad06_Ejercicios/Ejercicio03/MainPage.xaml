@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio03.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            
+            <Entry
+            x:Name="txtEntry1" 
+            BindingContext="{x:Reference txtEntry2}"
+            IsTextPredictionEnabled 
+            Text="{Binding Text, Mode=TwoWay}"
+            />
+            <Entry
+            x:Name="txtEntry2"
+            
+                
+            />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
