@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="EjemploShell.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:EjemploShell.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="EjemploShell">
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black"
+              HeightRequest="200">
+                <Image Aspect="AspectFill"
+                   Source="melendi.jpg"
+                   Opacity="0.4" />
+                <Label Text="OREO"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Peliculas"
+             Icon="paw.png">
+            <ShellContent Title="Terror"
+                          Icon="cat.png"
+                          ContentTemplate="{DataTemplate local:Terror}" />
+            <ShellContent Title="Animacion"
+                          Icon="dog.png"
+                          ContentTemplate="{DataTemplate local:Animacion}" />
+        </Tab>
+        <!--
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
+        -->
+        <ShellContent Title="Series"
+                      Icon="monkey.png"
+                      ContentTemplate="{DataTemplate local:Series}" />
+        <ShellContent Title="Musica"
+                      Icon="elephant.png"
+                      ContentTemplate="{DataTemplate local:Musica}" />
+        
+    </FlyoutItem>
+    <ShellContent Title="About"
+                  Icon="info.png"
+                  ContentTemplate="{DataTemplate local:About}" />
+    <ShellContent Title="Help"
+              Icon="info.png"
+              ContentTemplate="{DataTemplate local:Help}" />
+
+</Shell>
