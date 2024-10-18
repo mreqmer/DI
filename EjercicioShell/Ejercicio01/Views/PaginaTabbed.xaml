@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Ejercicio01.Views.PaginaTabbed"
+            xmlns:local="clr-namespace:Ejercicio01.Views"
+            Title="TabbedPageDemo"
+             BarBackgroundColor="#273c75"
+             BarTextColor="White"
+             SelectedTabColor="White"
+             UnselectedTabColor="Gray">
+    <local:Pagina1 IconImageSource="chat.png" Title="Pagina1" />
+    <local:Pagina2 IconImageSource="sobre.png" Title="Pagina2"/>
+    <local:Pagina3 IconImageSource="telefono.png" Title="Pagina3"/>
+</TabbedPage>   
