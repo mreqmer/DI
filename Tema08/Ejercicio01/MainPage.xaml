@@ -3,23 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ejercicio01.MainPage">
 
-    <ScrollView>
+
         <Border Stroke="Purple" StrokeThickness="5" StrokeShape="RoundRectangle 40,40,0,0">
             <StackLayout >
-                <VerticalStackLayout Padding="80">
-                    <Button Margin="10" BorderColor="Black" BorderWidth="2" Text="Boton1">
+                <VerticalStackLayout Padding="80" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button Margin="10" BorderColor="Black" BorderWidth="2" Text="Boton1"  WidthRequest="100">
 
                     </Button>
-                    <Button Margin="10" Text="Boton2">
+                    <Button Margin="10" Text="Boton2" WidthRequest="100">
                     </Button>
-                    <Button Margin="10" Text="Boton3">
+                    <Button Margin="10" Text="Boton3"  WidthRequest="100">
                     </Button>
 
-                <HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-                    <Label Text="Nombre:">
+                    <Label Text="Nombre:" FontAttributes="Bold" Padding="10">
                     </Label>
-                    <Entry BackgroundColor="AliceBlue">
+                        <Entry BackgroundColor="AliceBlue" WidthRequest="120">
 
                     </Entry>
 
@@ -30,6 +30,6 @@
            
         </StackLayout>
         </Border>
-    </ScrollView>
+
 
 </ContentPage>

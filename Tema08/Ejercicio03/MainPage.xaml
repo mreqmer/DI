@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio03.MainPage">
+
+    <AbsoluteLayout>
+        <BoxView Color="Red" AbsoluteLayout.LayoutBounds="0,0,80,80"></BoxView>
+        <BoxView Color="Blue" AbsoluteLayout.LayoutBounds="80,0,160,80"></BoxView>
+        <BoxView Color="Green" AbsoluteLayout.LayoutBounds="0,80,240,80"></BoxView>
+        <!--AbsoluteLayout.LayoutBounds="80,160,1,1", este coge toda la pantalla restante de donde empieza, si fuera 0.5 cogería la mitad de lo restante-->
+        <BoxView Color="Yellow" AbsoluteLayout.LayoutBounds="80,160,1,1" AbsoluteLayout.LayoutFlags="SizeProportional"></BoxView>
+
+    </AbsoluteLayout>
+        
+
+</ContentPage>
