@@ -2,6 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Ejercicio05UI.MainPage">
+<<<<<<< HEAD
+    <Grid>
+        <ScrollView>
+            <ListView
+                x:Name="PersonaListView" 
+                SeparatorVisibility="None"
+                HasUnevenRows="False"
+                RowHeight="100"
+                ItemsSource="{Binding Persona}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <SwipeView>
+                                <SwipeView.RightItems>
+                                    <SwipeItems>
+                                        <SwipeItem
+                                            Text="Editar"
+                                            IconImageSource="edit.png"
+                                            BackgroundColor="Green"/>
+                                        <SwipeItem
+                                            Text="Borrar"
+                                            IconImageSource="delete.png"
+                                            BackgroundColor="Red"/>
+                                    </SwipeItems>
+                                </SwipeView.RightItems>
+
+                                <HorizontalStackLayout VerticalOptions="Center" Spacing="20">
+                                    <Image Source="{Binding Foto}" WidthRequest="80"></Image>
+                                    <VerticalStackLayout Spacing="5">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium"></Label>
+                                        <Label Text="{Binding Descripcion}"></Label>
+                                    </VerticalStackLayout>
+                                </HorizontalStackLayout>
+                            </SwipeView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </Grid>
+</ContentPage>
+=======
 
     <ScrollView>
         <ListView x:Name="PersonaListView" ItemsSource="{Binding Persona}">
@@ -22,3 +64,4 @@
     </ScrollView>
 
 </ContentPage>
+>>>>>>> origin/main

@@ -4,6 +4,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Ejercicio05UI"
+<<<<<<< HEAD
+    Shell.FlyoutBehavior="Flyout"
+    Title="Ejercicio05UI">
+
+
+    <FlyoutItem Title="Otra página" Icon="icon.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" />
+    </FlyoutItem>
+=======
     Shell.FlyoutBehavior="Disabled"
     Title="Ejercicio05UI">
 
@@ -11,5 +20,6 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+>>>>>>> origin/main
 
 </Shell>

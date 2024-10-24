@@ -58,6 +58,12 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\def.png" />
+<<<<<<< HEAD
+	  <None Remove="Resources\Images\delete.png" />
+	  <None Remove="Resources\Images\edit.png" />
+	  <None Remove="Resources\Images\more.png" />
+=======
+>>>>>>> origin/main
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,7 +74,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+<<<<<<< HEAD
+	  <MauiXaml Update="View\Contactos.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+=======
 	  <ProjectReference Include="..\Ejercicio05Ent\Ejercicio05Ent.csproj" />
+>>>>>>> origin/main
 	</ItemGroup>
 
 </Project>

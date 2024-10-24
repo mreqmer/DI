@@ -1,10 +1,22 @@
+<<<<<<< HEAD
+﻿
+using Ejercicio05UI.Models.DAL;
+=======
 ﻿using Ejercicio05Ent;
+>>>>>>> origin/main
 using System.Collections.ObjectModel;
 
 namespace Ejercicio05UI
 {
     public partial class MainPage : ContentPage
     {
+<<<<<<< HEAD
+       
+        public MainPage()
+        {
+            InitializeComponent();
+            PersonaListView.ItemsSource = ListadoPersonas.ListarPersonas();
+=======
         ObservableCollection <clsPersona> personas = new ObservableCollection<clsPersona>();
         public ObservableCollection<clsPersona> Persona { get { return personas; } }
 
@@ -22,6 +34,7 @@ namespace Ejercicio05UI
             personas.Add(new clsPersona() { Nombre = "Daniel", Descripcion = "Musician", Foto = "def.png" });
             personas.Add(new clsPersona() { Nombre = "Isabella", Descripcion = "Fashion enthusiast", Foto = "def.png" });
             PersonaListView.ItemsSource = personas;
+>>>>>>> origin/main
         }
 
         
