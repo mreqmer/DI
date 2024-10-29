@@ -5,21 +5,21 @@
 
 
         <Border Stroke="Purple" StrokeThickness="5" StrokeShape="RoundRectangle 40,40,0,0">
-            <StackLayout >
-                <VerticalStackLayout Padding="80" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Button Margin="10" BorderColor="Black" BorderWidth="2" Text="Boton1"  WidthRequest="100">
+            
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Button Margin="10" BorderColor="Black" BorderWidth="2" Text="Boton1"  >
 
                     </Button>
-                    <Button Margin="10" Text="Boton2" WidthRequest="100">
+                    <Button Margin="10" Text="Boton2" >
                     </Button>
-                    <Button Margin="10" Text="Boton3"  WidthRequest="100">
+                    <Button Margin="10" Text="Boton3" >
                     </Button>
 
-                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <HorizontalStackLayout>
 
                     <Label Text="Nombre:" FontAttributes="Bold" Padding="10">
                     </Label>
-                        <Entry BackgroundColor="AliceBlue" WidthRequest="120">
+                        <Entry BackgroundColor="AliceBlue" MinimumWidthRequest="120">
 
                     </Entry>
 
@@ -28,7 +28,7 @@
 
             </VerticalStackLayout>
            
-        </StackLayout>
+        
         </Border>
 
 
