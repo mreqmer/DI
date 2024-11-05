@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlacasSolares.MainPage"
+             Background="White">
+
+
+
+    <VerticalStackLayout Padding="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Image Source="logo.png"
+               WidthRequest="100"
+               HeightRequest="100"
+               HorizontalOptions="Center" />
+
+        <Entry x:Name="txtUsuario"
+               Placeholder="Usuario"
+               Keyboard="Text"
+               WidthRequest="250" />
+
+        <Entry x:Name="txtPassword"
+               Placeholder="Contraseña"
+               IsPassword="True"
+               WidthRequest="250" />
+
+        <Button Text="Iniciar Sesión"
+                WidthRequest="250"
+                Clicked="OnLoginClicked"
+                BackgroundColor="#023E8A"/>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
