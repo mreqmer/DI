@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PlacasSolares.Views.MapView"
+             Background="White">
+
+    <Grid>
+        <!-- Define las filas del Grid principal -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Para el encabezado -->
+            <RowDefinition Height="*" />
+            <!-- Para el contenido desplazable -->
+        </Grid.RowDefinitions>
+        <!-- Encabezado fijo en la parte superior -->
+        <Grid BackgroundColor="#023E8A" MaximumHeightRequest="100" Grid.Row="0">
+            <ImageButton Source="atrasblanco.png"
+                 MinimumHeightRequest="0"
+                 MinimumWidthRequest="0"
+                 WidthRequest="18"
+                 HeightRequest="18"
+                 BackgroundColor="Transparent"
+                 HorizontalOptions="Start"
+                 Margin="40,0,0,0"
+                 Clicked="OnClickBack"
+                 /> 
+
+            <Label Text="Solaris"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="70,20,0,20" />
+        </Grid>
+
+        <!-- Contenido desplazable debajo del encabezado -->
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <!-- Imagen centrada -->
+                <Image 
+                    Margin="0,50,0,50"
+                    Source="mapa.png" 
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center" 
+                    MaximumHeightRequest="550"
+                    MaximumWidthRequest="550" />
+
+
+                <Frame
+                    Margin="30, 10, 30, 20"
+                    Padding="10"
+                    BackgroundColor="#D9D9D9"
+                    CornerRadius="10"
+                    BorderColor="Transparent"
+                    MaximumWidthRequest="550"
+                    HasShadow="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label
+                            Text="Cliente"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            Margin="20,10,0,20"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                        </Label>
+                        <Label
+                            Text="Pepe Pepito Montes Altos"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Row="1" />
+                        <Label
+                            Text="666555444"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Row="2" />
+                        <Label
+                            Text="C/ Jardines Bonitos nº8 Bajo A"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Row="3" />
+                        <Label
+                            Text="41700, Dos Hermanas, Sevilla"
+                            TextColor="Black"
+                            Margin="20,0,0,10"
+                            Grid.Row="4" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

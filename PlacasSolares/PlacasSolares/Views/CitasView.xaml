@@ -3,117 +3,144 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlacasSolares.Views.CitasView"
              BackgroundColor="White">
-    
-        <StackLayout Padding="10">
-        <Grid Padding="20" BackgroundColor="#0078D4" HeightRequest="100">
-            <Grid.ColumnDefinitions>
-                <!-- Todo el espacio -->
-                <ColumnDefinition Width="*" />
-                <!-- Espacio restante -->
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
 
-            <Label Text="Good Morning, Manoli"
-           FontSize="24"
-           TextColor="White"
-           VerticalOptions="Center"
-           HorizontalOptions="Start"
-           Grid.Column="0" />
+    <Grid>
+        <!-- Define las filas del Grid principal -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Para el encabezado -->
+            <RowDefinition Height="*" />
+            <!-- Para el contenido desplazable -->
+        </Grid.RowDefinitions>
+        <!-- Encabezado fijo en la parte superior -->
+        <Grid BackgroundColor="#023E8A" MaximumHeightRequest="100" Grid.Row="0">
+            <ImageButton Source="atrasblanco.png"
+                 MinimumHeightRequest="0"
+                 MinimumWidthRequest="0"
+                 WidthRequest="18"
+                 HeightRequest="18"
+                 BackgroundColor="Transparent"
+                 HorizontalOptions="Start"
+                 Margin="40,0,0,0"
+                 Clicked="OnClickBack"
+                 />
 
-            <Button Text="Logout"
-            BorderColor="White"
-            BorderWidth="1"
-            BackgroundColor="Transparent"
-            HorizontalOptions="End"
-            VerticalOptions="Center"
-            
-            Grid.Column="1"/>
+            <Label Text="Solaris"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   Margin="70,20,0,20" />
         </Grid>
-        <ListView x:Name="CitasListView"
-              SeparatorVisibility="None"
-              HasUnevenRows="False"
-              RowHeight="140">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame Margin="30, 10, 30, 20"
-                           Padding="10"
-                           BackgroundColor="#D9D9D9"
-                           CornerRadius="10"
-                           BorderColor="Transparent"
-                           HasShadow="True">
-                            <Grid Padding="20, 3, 0, 0" ColumnDefinitions="*,Auto">
-                                <StackLayout Grid.Column="0">
-                                    <Grid RowDefinitions="Auto,Auto,Auto">
 
-                                        <!-- Nombre -->
-                                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*">
+        <!-- Contenido desplazable debajo del encabezado -->
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <!-- Título encima de la lista -->
+                <Label Text="Citas:"
+                       FontSize="18"
+                       TextColor="Black"  
+                       FontAttributes="Bold"
+                       Margin="40,30,30,10" />
 
-                                            <Label Text="Nombre: " 
-                                               Margin="0,0,10,0" 
-                                               FontAttributes="Bold" 
-                                               TextColor="Black" 
-                                               Grid.Column="0"/>
+                <!-- Lista de Citas -->
+                <ListView x:Name="CitasListView"
+                          SeparatorVisibility="None"
+                          HasUnevenRows="False"
+                          RowHeight="140">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="30, 10, 30, 20"
+                                   Padding="10"
+                                   BackgroundColor="#D9D9D9"
+                                   CornerRadius="10"
+                                   BorderColor="Transparent"
+                                   HasShadow="True">
+                                    <Grid Padding="20, 3, 0, 0" ColumnDefinitions="*,Auto">
+                                        <StackLayout Grid.Column="0">
+                                            <Grid RowDefinitions="Auto,Auto,Auto">
+                                                <!-- Nombre -->
+                                                <Grid Grid.Row="0" ColumnDefinitions="Auto,*">
+                                                    <Label Text="Nombre: " 
+                                                       Margin="0,0,10,0" 
+                                                       FontAttributes="Bold" 
+                                                       TextColor="Black" 
+                                                       Grid.Column="0"/>
+                                                    <Label Text="{Binding Nombre}" 
+                                                       TextColor="#023E8A" 
+                                                       FontAttributes="Bold" 
+                                                       Grid.Column="1"/>
+                                                </Grid>
 
-                                            <Label Text="{Binding Nombre}" 
-                                               TextColor="#023E8A" 
-                                               FontAttributes="Bold" 
-                                               Grid.Column="1"/>
-                                        </Grid>
+                                                <!-- ID -->
+                                                <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
+                                                    <Label Text="ID: " 
+                                                       Margin="0,0,10,0" 
+                                                       FontAttributes="Bold" 
+                                                       TextColor="Black" 
+                                                       Grid.Column="0"/>
+                                                    <Label Text="{Binding Id}" 
+                                                       TextColor="#023E8A" 
+                                                       FontAttributes="Bold" 
+                                                       Grid.Column="1"/>
+                                                </Grid>
 
-                                        <!-- ID -->
-                                        <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
-                                            <Label Text="ID: " 
-                                               Margin="0,0,10,0" 
-                                               FontAttributes="Bold" 
-                                               TextColor="Black" 
-                                               Grid.Column="0"/>
+                                                <!-- Fecha y Hora -->
+                                                <Grid Grid.Row="2">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="80"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                            <Label Text="{Binding Id}" 
-                                               TextColor="#023E8A" 
-                                               FontAttributes="Bold" 
-                                               Grid.Column="1"/>
-                                        </Grid>
+                                                    <!-- Fecha -->
+                                                    <StackLayout Grid.Column="0">
+                                                        <Label Text="Fecha:" 
+                                                           Margin="0,0,50,0" 
+                                                           FontAttributes="Bold" 
+                                                           TextColor="Black"/>
+                                                        <Label Text="{Binding Fecha}" 
+                                                           TextColor="#023E8A" 
+                                                           Margin="0,0,50,0" 
+                                                           FontAttributes="Bold"/>
+                                                    </StackLayout>
 
-                                        <!-- Fecha y Hora -->
-                                        <Grid Grid.Row="2" >
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="150"/>
-                                                <ColumnDefinition Width="80"/>
-                                            </Grid.ColumnDefinitions>
+                                                    <!-- Hora -->
+                                                    <StackLayout Grid.Column="1">
+                                                        <Label Text="Hora:" 
+                                                           FontAttributes="Bold" 
+                                                           TextColor="Black" 
+                                                           HorizontalOptions="Start"/>
+                                                        <Label Text="{Binding Hora}" 
+                                                           TextColor="#023E8A" 
+                                                           FontAttributes="Bold" 
+                                                           HorizontalOptions="Start"/>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Grid>
+                                        </StackLayout>
 
-                                            <!-- Fecha -->
-                                            <StackLayout Grid.Column="0">
-                                                <Label Text="Fecha:" Margin="0,0,50,0" FontAttributes="Bold" TextColor="Black"/>
-                                                <Label Text="{Binding Fecha}" TextColor="#023E8A" Margin="0,0,50,0" FontAttributes="Bold"/>
-                                            </StackLayout>
-
-                                            <!-- Hora -->
-                                            <StackLayout Grid.Column="1">
-                                                <Label Text="Hora:" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start"/>
-                                                <Label Text="{Binding Hora}" TextColor="#023E8A" FontAttributes="Bold" HorizontalOptions="Start"/>
-                                            </StackLayout>
-                                        </Grid>
+                                        <!-- Botón de Acción -->
+                                        <Button Grid.Column="1"
+                                            Text="Reporte"
+                                            Margin="0,0,20,0"
+                                            WidthRequest="100"
+                                            CornerRadius="18"    
+                                            VerticalOptions="Center"
+                                            HorizontalOptions="End"
+                                            BackgroundColor="#023E8A"
+                                            TextColor="White"
+                                            Clicked="OnClickReporte"/>
                                     </Grid>
-                                </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
 
-                                <Button Grid.Column="1"
-                                    Text="Acción"
-                                    Margin="0,0,20,0"
-                                    WidthRequest="100"
-                                    CornerRadius="18"    
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="End"
-                                    BackgroundColor="#023E8A"
-                                    TextColor="White"
-                                    Clicked="OnClickReporte"/>
-                            </Grid>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-        
+
+    </Grid>
 </ContentPage>
-    

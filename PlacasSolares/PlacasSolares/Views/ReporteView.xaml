@@ -2,11 +2,254 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PlacasSolares.Views.ReporteView"
-             Title="ReporteView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Background="White">
+
+    <Grid>
+        <!-- Define las filas del Grid principal -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- Para el encabezado -->
+            <RowDefinition Height="*" />
+            <!-- Para el contenido desplazable -->
+        </Grid.RowDefinitions>
+        <!-- Encabezado fijo en la parte superior -->
+        <Grid BackgroundColor="#023E8A" MaximumHeightRequest="100" Grid.Row="0">
+            <ImageButton Source="atrasblanco.png"
+             MinimumHeightRequest="0"
+             MinimumWidthRequest="0"
+             WidthRequest="18"
+             HeightRequest="18"
+             BackgroundColor="Transparent"
+             HorizontalOptions="Start"
+             Margin="40,0,0,0"
+             Clicked="OnClickBack"
+             />
+
+            <Label Text="Solaris"
+               FontSize="16"
+               FontAttributes="Bold"
+               TextColor="White"
+               VerticalOptions="Center"
+               HorizontalOptions="Start"
+               Margin="70,20,0,20" />
+        </Grid>
+
+
+
+        <!-- Contenido desplazable debajo del encabezado -->
+        <ScrollView Grid.Row="1">
+            <StackLayout>
+                <!-- Título encima de la lista -->
+                <Label Text="Reporte 1234ABC:"
+                           FontSize="18"
+                           TextColor="Black"  
+                           FontAttributes="Bold"
+                       Margin="40,30,30,10" />
+                <!--Frame para los Clientes-->
+                <Frame
+                    Margin="30, 10, 30, 20"
+                    Padding="10"
+                    BackgroundColor="#D9D9D9"
+                    CornerRadius="10"
+                    BorderColor="Transparent"
+                    HasShadow="True">
+                    <Grid >
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Text="Cliente"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            Margin="20,10,0,20"
+                            Grid.Column="0"
+                            Grid.Row="0">
+                        </Label>
+                        <Label
+                            Text="Pepe Pepito Montes Altos"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Column="0"
+                            Grid.Row="1">
+                        </Label>
+                        <Label
+                            Text="666555444"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Column="0"
+                            Grid.Row="2">
+                        </Label>
+                        <Label
+                            Text="C/ Jardines Bonitos nº8 Bajo A"
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Column="0"
+                            Grid.Row="3">
+                        </Label>
+                        <Label
+                            Text="41700, Dos Hermanas, Sevilla"
+                            TextColor="Black"
+                            Margin="20,0,0,10"
+                            Grid.Column="0"
+                            Grid.Row="4">
+                        </Label>
+                        <ImageButton 
+                            Source="ubicacion.png"
+                            HeightRequest="25"
+                            WidthRequest="25"
+                            MinimumHeightRequest="0"
+                            MinimumWidthRequest="0"
+                            Aspect="AspectFill"
+                            Margin="20,0,10,15"
+                            HorizontalOptions="End"
+                            Clicked="GoToMap"
+                            Grid.Column="1"
+                            Grid.Row="4">
+
+                        </ImageButton>
+                    </Grid>
+                </Frame>
+                <Frame
+                    Margin="30, 10, 30, 20"
+                    Padding="10"
+                    BackgroundColor="#D9D9D9"
+                    CornerRadius="10"
+                    BorderColor="Transparent"
+                    HasShadow="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Título de descripción -->
+                        <Label
+                            Text="Descripción"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="Black"
+                            Margin="20,10,0,20"
+                            Grid.Column="0"
+                            Grid.Row="0" />
+
+                        <!-- Bloque de texto para la descripción -->
+                        <Label
+                            Text="El cliente presenta grietas en el tejado lo cual dificultan en exceso la instalación de placas.Se ha informado que no es posible la instalación hasta que sea arreglado el tejado."
+                            TextColor="Black"
+                            Margin="20,0,0,5"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            VerticalOptions="Start"/>
+
+                        <!-- Icono inferior derecho -->
+                        <Image 
+                            Source="editar.png"
+                            HeightRequest="25"
+                            WidthRequest="25"
+                            Margin="0,0,10,10"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            Grid.Column="1"
+                            Grid.Row="2" />
+                    </Grid>
+                </Frame>
+                <Frame
+                     Margin="30, 10, 30, 20"
+                     Padding="10"
+                     BackgroundColor="#D9D9D9"
+                     CornerRadius="10"
+                     BorderColor="Transparent"
+                     HasShadow="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Título de descripción -->
+                        <Label
+                             Text="Imágenes"
+                             FontSize="14"
+                             FontAttributes="Bold"
+                             TextColor="Black"
+                             Margin="20,10,0,20"
+                             Grid.Column="0"
+                             Grid.Row="0" />
+                        <Label
+                             Text="Img1.png"
+                             TextColor="Black"
+                             Margin="20,0,0,5"
+                             Grid.Column="0"
+                             Grid.Row="1"
+                             Grid.ColumnSpan="2"
+                             VerticalOptions="Start"/>
+
+
+                        <Image 
+                             Source="mas.png"
+                             HeightRequest="25"
+                             WidthRequest="25"
+                             Margin="0,0,10,10"
+                             HorizontalOptions="End"
+                             VerticalOptions="End"
+                             Grid.Column="1"
+                             Grid.Row="2" />
+                    </Grid>
+                </Frame>
+
+
+                <Grid 
+                    Margin="30,20,30,30" 
+                    ColumnDefinitions="*, 60, *">
+                    <!-- Botón Aceptar -->
+                    <Button
+                        x:Name="BtnAceptar" 
+                        Text="Aceptar"
+                        BackgroundColor="#023E8A"
+                        BorderColor="#023E8A"
+                        BorderWidth="1"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Grid.Column="0" 
+                        WidthRequest="100"
+                        HorizontalOptions="End"
+                        Clicked="OnClickAceptar"/>
+
+                    <!-- Botón Rechazar -->
+                    <Button 
+                        x:Name="BtnRechazar" 
+                        Text="Rechazar"
+                        BackgroundColor="#FFFFFF"
+                        BorderColor="#023E8A"
+                        BorderWidth="1"
+                        TextColor="#023E8A"
+                        CornerRadius="5"
+                        Grid.Column="2" 
+                        HorizontalOptions="Start"
+                        WidthRequest="100" 
+                        Clicked="OnClickRechazar"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
 </ContentPage>

@@ -14,4 +14,10 @@ public partial class CitasView : ContentPage
     {
         await Navigation.PushAsync(new ReporteView());
     }
+
+    private async void OnClickBack(object sender, EventArgs e)
+    {
+        
+        await Navigation.PopAsync();
+    }
 }

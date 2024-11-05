@@ -16,14 +16,17 @@
         <Entry x:Name="txtUsuario"
                Placeholder="Usuario"
                Keyboard="Text"
+               TextColor="Black"
                WidthRequest="250" />
 
         <Entry x:Name="txtPassword"
                Placeholder="Contraseña"
                IsPassword="True"
+               TextColor="Black"
                WidthRequest="250" />
 
         <Button Text="Iniciar Sesión"
+                TextColor="White"
                 WidthRequest="250"
                 Clicked="OnLoginClicked"
                 BackgroundColor="#023E8A"/>

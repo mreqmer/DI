@@ -14,8 +14,14 @@ namespace PlacasSolares
 
         private async void OnLoginClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CitasView());
+            if (!string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                await Navigation.PushAsync(new CitasView());
+            }
+
         }
+
+
     }
 
 }
