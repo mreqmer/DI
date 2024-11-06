@@ -6,7 +6,11 @@ public partial class MapView : ContentPage
 	{
 		InitializeComponent();
 	}
-
+    /// <summary>
+    /// Boton que navega atras
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     private async void OnClickBack(object sender, EventArgs e)
     {
         await Navigation.PopAsync();

@@ -65,7 +65,7 @@
                             <RowDefinition Height="*" />
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
-
+                        <!--Cliente-->
                         <Label
                             Text="Cliente"
                             FontSize="14"
@@ -103,19 +103,20 @@
                             Grid.Column="0"
                             Grid.Row="4">
                         </Label>
+                        <!--Boton de ubicacion-->
                         <ImageButton 
                             Source="ubicacion.png"
                             HeightRequest="25"
                             WidthRequest="25"
                             MinimumHeightRequest="0"
                             MinimumWidthRequest="0"
+                            BackgroundColor="#D9D9D9"
                             Aspect="AspectFill"
                             Margin="20,0,10,15"
                             HorizontalOptions="End"
                             Clicked="GoToMap"
                             Grid.Column="1"
                             Grid.Row="4">
-
                         </ImageButton>
                     </Grid>
                 </Frame>
@@ -147,7 +148,6 @@
                             Grid.Column="0"
                             Grid.Row="0" />
 
-                        <!-- Bloque de texto para la descripción -->
                         <Label
                             Text="El cliente presenta grietas en el tejado lo cual dificultan en exceso la instalación de placas.Se ha informado que no es posible la instalación hasta que sea arreglado el tejado."
                             TextColor="Black"
@@ -157,7 +157,7 @@
                             Grid.ColumnSpan="2"
                             VerticalOptions="Start"/>
 
-                        <!-- Icono inferior derecho -->
+                        <!-- Boton para editar -->
                         <Image 
                             Source="editar.png"
                             HeightRequest="25"
@@ -186,7 +186,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <!-- Título de descripción -->
+                        <!--Imagenes-->
                         <Label
                              Text="Imágenes"
                              FontSize="14"

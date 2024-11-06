@@ -8,11 +8,14 @@ namespace Placas.Models.ENT
 {
     public class Cita
     {
+        #region Atributos
         private string id;
         private string nombre;
         private string fecha;
         private string hora;
+        #endregion
 
+        #region Constructores
         public Cita(string id, string nombre, string fecha, string hora)
         {
             this.id = id;
@@ -20,7 +23,9 @@ namespace Placas.Models.ENT
             this.fecha = fecha;
             this.hora = hora;
         }
+        #endregion
 
+        #region Getters Setter
         public string Id
         {
             get { return id; }
@@ -43,6 +48,6 @@ namespace Placas.Models.ENT
             get { return hora; }
             set { hora = value; }
         }
-
+        #endregion
     }
 }
