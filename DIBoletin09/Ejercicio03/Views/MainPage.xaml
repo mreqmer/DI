@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ejercicio03.Models"
+             xmlns:models="clr-namespace:Ejercicio03.Models"
+
+             x:Class="Ejercicio03.Views.MainPage">
+
+    <!--Esta es la otra forma de hacer binding pero desde el xaml, importante decirle en el content page
+        donde se encuentra local
+        xmlns:local="clr-namespace:Ejercicio03.Models"-->
+    <ContentPage.BindingContext>
+        <local:PersonaVM />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!--Para que el bindeo funcione es importante poner donde se encuentra
+                xmlns:models="clr-namespace:Ejercicio03.Models"-->
+            <Entry Text="{Binding Persona.Nombre}" Placeholder="Escribe tu nombre aquí" />
+            <Label Text="{Binding Persona.Nombre}" FontSize="Large" FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

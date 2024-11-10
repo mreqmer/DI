@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio01.Views.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Slider
+                x:Name="miSlider"
+                Maximum="100"/>
+
+            <Label Text="Simple Text"
+                   BindingContext="{x:Reference Name=miSlider}"
+                   FontSize="{Binding Value}"></Label>
+
+            <Label BindingContext="{x:Reference Name=miSlider}"
+                   Text="{Binding Value}"
+                   ></Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio05.Views.DetallesPersona"
+             Title="DetallesPersona">
+    <VerticalStackLayout>
+        <Image Source="{Binding Foto}" MaximumHeightRequest="500" MaximumWidthRequest="500" MinimumHeightRequest="200" MinimumWidthRequest="200"></Image>
+        <Label FontSize="20" FontAttributes="Bold" Text="{Binding Nombre}"></Label>
+        <Label Text="Dirección:"></Label>
+        <Label Text="{Binding Direccion}"></Label>
+        <Label Text="Telefono:" />
+        <Label Text="{Binding Telefono}" />
+    </VerticalStackLayout>
+    
+</ContentPage>
