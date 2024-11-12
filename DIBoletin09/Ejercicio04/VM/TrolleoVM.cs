@@ -23,6 +23,7 @@ namespace Ejercicio04.VM
             set
             {
                 nombre = value;
+                OnPropertyChanged();
                 if (nombre.Contains("n"))
                 {
                     apellido = "";
@@ -40,7 +41,7 @@ namespace Ejercicio04.VM
             set
             {
                 apellido = value;
-
+                OnPropertyChanged();
                 if (apellido.Contains("n"))
                 {
                     nombre = "";
