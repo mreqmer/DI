@@ -19,8 +19,8 @@
             Spacing="25">
             <!--Para que el bindeo funcione es importante poner donde se encuentra
                 xmlns:models="clr-namespace:Ejercicio03.Models"-->
-            <Entry Text="{Binding Persona.Nombre}" Placeholder="Escribe tu nombre aquí" />
-            <Label Text="{Binding Persona.Nombre}" FontSize="Large" FontAttributes="Bold" />
+            <Entry Text="{Binding Nombre}" Placeholder="Escribe tu nombre aquí" />
+            <Label Text="{Binding Nombre}" FontSize="Large" FontAttributes="Bold" />
 
         </VerticalStackLayout>
     </ScrollView>

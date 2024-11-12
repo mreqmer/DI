@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ENT03
 {
-    public class Persona : INotifyPropertyChanged
+    public class Persona 
     {
 
         #region Atributos
@@ -19,7 +19,7 @@ namespace ENT03
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; OnPropertyChanged("Nombre"); }
+            set { nombre = value; }
         }
         #endregion
 
@@ -35,15 +35,6 @@ namespace ENT03
         }
         #endregion
 
-
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
 
     }
 }

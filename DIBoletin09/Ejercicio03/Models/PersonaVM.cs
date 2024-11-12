@@ -12,20 +12,18 @@ namespace Ejercicio03.Models
     public class PersonaVM : INotifyPropertyChanged
     {
         #region Atributos
-        private Persona persona;
+        private string nombre;
+        
         #endregion
 
         #region Get/Set
-        public Persona Persona
+        public string Nombre
         {
-            get => persona;
+            get => nombre;
             set
             {
-                if (persona != value)
-                {
-                    persona = value;
-                    OnPropertyChanged("Nombre");
-                }
+                nombre = value;
+                OnPropertyChanged("Nombre");
             }
         }
         #endregion
@@ -33,13 +31,9 @@ namespace Ejercicio03.Models
         #region Constructores
         public PersonaVM()
         {
-            Persona = new Persona();
+            nombre = "Marta";
         }
 
-        public PersonaVM(string nombre)
-        {
-            Persona = new Persona(nombre);
-        }
         #endregion
 
         #region PropertyChanged
