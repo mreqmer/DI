@@ -1,4 +1,4 @@
-﻿using Ejercicio01.Models.ENT;
+﻿using Ejercicio02.Models.ENT;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio01.Models.BL
+namespace Ejercicio02.Models.BL
 {
     internal class ListadosBl
     {
@@ -42,12 +42,5 @@ namespace Ejercicio01.Models.BL
             DAL.ListadosDal.BorrarPersonaPorId(id, personas);
         }
 
-        public static ObservableCollection<ClsPersona> FiltrarPorNombreBl(ref ObservableCollection<ClsPersona> listaPersonas, string filtro)
-        {
-
-            return DAL.ListadosDal.FiltrarPorNombreDal(ref listaPersonas, filtro);
-
-        }
-
-        }
+    }
 }

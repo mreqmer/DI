@@ -12,20 +12,30 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-
-            <Button 
+            <HorizontalStackLayout>
+                <Entry Text="{Binding Busqueda}" >
+                </Entry>
+                
+                <Button 
+                    Command="{Binding BtnBuscarCommand}"
+                    ImageSource="lupa.png"
+                    MaximumHeightRequest="40"
+                    MaximumWidthRequest="125"/>
+                <Button 
                 Text="Eliminar"
                 Command="{Binding BtnEliminarCommand}"
                 ImageSource="papelera.png"
                 ContentLayout="Right, 10"
                 MaximumWidthRequest="125"
-                HeightRequest="40"> 
-            </Button>
+                HeightRequest="40">
+                </Button>
+            </HorizontalStackLayout>
 
             <Label Text="{Binding PersonaSeleccionada.Nombre}"/>
+            <Label BindingContext="{Binding Busqueda}"></Label>
 
             <ListView
-             ItemsSource="{Binding ListaPersonas}"
+             ItemsSource="{Binding Lista}"
              HasUnevenRows="False"
              RowHeight="80"
             SelectedItem="{Binding PersonaSeleccionada}">

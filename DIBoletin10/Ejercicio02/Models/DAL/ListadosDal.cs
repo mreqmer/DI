@@ -1,4 +1,4 @@
-﻿using Ejercicio01.Models.ENT;
+﻿using Ejercicio02.Models.ENT;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio01.Models.DAL
+namespace Ejercicio02.Models.DAL
 {
     internal class ListadosDal
     {
@@ -57,21 +57,6 @@ namespace Ejercicio01.Models.DAL
             ClsPersona personaBorrar = BuscarPersonaPorId(id, personas);
             personas.Remove(personaBorrar);
         }
-
-        /// <summary>
-        /// A partir de un string busca gente
-        /// </summary>
-        /// <param name="listaPersonas"></param>
-        /// <param name="filtro"></param>
-        /// <returns></returns>
-        public static ObservableCollection<ClsPersona> FiltrarPorNombreDal(ref ObservableCollection<ClsPersona> listaPersonas, string filtro)
-        {
-
-            List<ClsPersona> resultado = listaPersonas.Where(p => p.Nombre.Contains(filtro, StringComparison.OrdinalIgnoreCase)).ToList();
-
-            return new ObservableCollection<ClsPersona>(resultado);
-        }
-
 
     }
 }

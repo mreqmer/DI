@@ -18,17 +18,46 @@ namespace Ejercicio01.Models.VM
     public class ListadoPersonasVM : clsVMBase
     {
         #region Atributos
+        private DelegateCommand btnBuscarCommand;
+
         private DelegateCommand btnEliminarCommand;
 
-        private ObservableCollection<ClsPersona> listaPersonas;
+        private string busqueda = "";
+
+        private ObservableCollection<ClsPersona> listaOriginal;
+        private ObservableCollection<ClsPersona> lista;
+
 
         private ClsPersona personaSeleccionada;
         #endregion
 
         #region Propiedades
+        public DelegateCommand BtnBuscarCommand { get { return btnBuscarCommand;}}
         public DelegateCommand BtnEliminarCommand { get { return btnEliminarCommand; } }
 
-        public ObservableCollection<ClsPersona> ListaPersonas { get { return listaPersonas; } }
+        public string Busqueda 
+        {
+            get { return busqueda;} 
+            set {
+                busqueda = value;
+                btnBuscarCommand.RaiseCanExecuteChanged();
+                OnPropertyChanged("Busqueda");
+                if (!btnBuscarCommand_CanExecute())
+                {
+                    lista = listaOriginal;
+                    OnPropertyChanged("Lista");
+                }
+                
+                
+            } 
+        }
+
+
+        public ObservableCollection<ClsPersona> Lista 
+        {
+            get { return lista; }
+           
+        }
 
         public ClsPersona PersonaSeleccionada { 
             get => personaSeleccionada;
@@ -43,16 +72,12 @@ namespace Ejercicio01.Models.VM
         #region Constructores
         public ListadoPersonasVM()
         {
-            this.listaPersonas = ListadosBl.ObtenerPersonasBl();
+            this.listaOriginal = ListadosBl.ObtenerPersonasBl();
+            this.lista = listaOriginal;
             btnEliminarCommand = new DelegateCommand(btnEliminarCommand_Execute, btnEliminarCommand_CanExecute);
+            btnBuscarCommand = new DelegateCommand(btnBuscarCommand_Execute, btnBuscarCommand_CanExecute);
         }
 
-        public ListadoPersonasVM(int idPersonaSeleccionada)
-        {
-            this.listaPersonas = ListadosBl.ObtenerPersonasBl();
-            this.personaSeleccionada = ListadosBl.BuscarPersonaPorIdBl(idPersonaSeleccionada, listaPersonas);
-            btnEliminarCommand = new DelegateCommand(btnEliminarCommand_Execute, btnEliminarCommand_CanExecute);
-        }
         #endregion
 
         #region Commands
@@ -62,6 +87,7 @@ namespace Ejercicio01.Models.VM
         /// <returns>boolean de comprobación</returns>
         private bool btnEliminarCommand_CanExecute()
         {
+            
             bool canExecute = false;
             if (personaSeleccionada != null)
             {
@@ -70,12 +96,37 @@ namespace Ejercicio01.Models.VM
 
             return canExecute;
         }
+
+        /// <summary>
+        /// Verifica si se puede ejecutar o no el boton para la busqueda
+        /// </summary>
+        /// <returns></returns>
+        private bool btnBuscarCommand_CanExecute()
+        {
+            bool canExecute = false;
+            if (busqueda.Length>0)
+            {
+                canExecute = true;
+            }
+            return canExecute;
+        }
         /// <summary>
         /// Lógica del boton, borra una persona que está seleccionadad de la lista 
         /// </summary>
         private void btnEliminarCommand_Execute()
         {
-            BL.ListadosBl.BorrarPersonaIdBl(personaSeleccionada.Id, listaPersonas);
+            listaOriginal.Remove(personaSeleccionada);
+            lista.Remove(personaSeleccionada);
+        }
+        /// <summary>
+        /// Logica del boton para filtrar personas
+        /// </summary>
+        private void btnBuscarCommand_Execute()
+        {
+            
+            lista = ListadosBl.FiltrarPorNombreBl(ref listaOriginal, busqueda);
+            OnPropertyChanged("Lista");
+
         }
         #endregion
     }
