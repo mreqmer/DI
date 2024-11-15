@@ -8,18 +8,12 @@ using System.Threading.Tasks;
 
 namespace Ejercicio01.Models.VM.Utils
 {
-    public class ClsVMBase
+    public abstract class clsVMBase : INotifyPropertyChanged
     {
-
-        public abstract class clsVMBase : INotifyPropertyChanged
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            public event PropertyChangedEventHandler PropertyChanged;
-
-            protected virtual void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

@@ -12,16 +12,20 @@ using System.Runtime.CompilerServices;
 
 namespace Ejercicio01.Models.VM
 {
-    public class ListadoPersonasVM : INotifyPropertyChanged
+    /// <summary>
+    /// VM para la vista MainPage, implementa INotifyPropertyChanged
+    /// </summary>
+    public class ListadoPersonasVM : clsVMBase
     {
-
+        #region Atributos
         private DelegateCommand btnEliminarCommand;
-
 
         private ObservableCollection<ClsPersona> listaPersonas;
 
         private ClsPersona personaSeleccionada;
+        #endregion
 
+        #region Propiedades
         public DelegateCommand BtnEliminarCommand { get { return btnEliminarCommand; } }
 
         public ObservableCollection<ClsPersona> ListaPersonas { get { return listaPersonas; } }
@@ -34,7 +38,9 @@ namespace Ejercicio01.Models.VM
                 OnPropertyChanged("PersonaSeleccionada");
             }
         }
+        #endregion
 
+        #region Constructores
         public ListadoPersonasVM()
         {
             this.listaPersonas = ListadosBl.ObtenerPersonasBl();
@@ -47,7 +53,13 @@ namespace Ejercicio01.Models.VM
             this.personaSeleccionada = ListadosBl.BuscarPersonaPorIdBl(idPersonaSeleccionada, listaPersonas);
             btnEliminarCommand = new DelegateCommand(btnEliminarCommand_Execute, btnEliminarCommand_CanExecute);
         }
+        #endregion
 
+        #region Commands
+        /// <summary>
+        /// Verifica si se puede ejecutar o no el btn
+        /// </summary>
+        /// <returns>boolean de comprobación</returns>
         private bool btnEliminarCommand_CanExecute()
         {
             bool canExecute = false;
@@ -58,16 +70,13 @@ namespace Ejercicio01.Models.VM
 
             return canExecute;
         }
-
+        /// <summary>
+        /// Lógica del boton, borra una persona que está seleccionadad de la lista 
+        /// </summary>
         private void btnEliminarCommand_Execute()
         {
             BL.ListadosBl.BorrarPersonaIdBl(personaSeleccionada.Id, listaPersonas);
         }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        #endregion
     }
 }

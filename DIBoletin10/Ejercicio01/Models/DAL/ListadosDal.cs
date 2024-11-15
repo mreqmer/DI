@@ -10,7 +10,10 @@ namespace Ejercicio01.Models.DAL
 {
     internal class ListadosDal
     {
-
+        /// <summary>
+        /// Carga un ObservableCollection de personas
+        /// </summary>
+        /// <returns>ObservableCollection de ClsPersona</returns>
         public static ObservableCollection<ClsPersona> ObtenerPersonasDal()
         {
 
@@ -34,12 +37,21 @@ namespace Ejercicio01.Models.DAL
 
             return personas;
         }
-
+        /// <summary>
+        /// Busca una persona en el Observable collection según su id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="personas"></param>
+        /// <returns>objeto ClsPersona</returns>
         public static ClsPersona BuscarPersonaPorId(int id, ObservableCollection<ClsPersona> personas)
         {
             return personas.FirstOrDefault(persona => persona.Id == id);
         }
-
+        /// <summary>
+        /// Busca una persona por su id y la borra
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="personas"></param>
         public static void BorrarPersonaPorId(int id, ObservableCollection<ClsPersona> personas)
         {
             ClsPersona personaBorrar = BuscarPersonaPorId(id, personas);

@@ -9,6 +9,7 @@ namespace Ejercicio01.Models.ENT
     public class ClsPersona
     {
         #region Atributos
+
         private int id;
         private string nombre;
         private string apellidos;
