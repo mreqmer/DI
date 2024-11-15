@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vmodel="clr-namespace:Ejercicio01.Models.VM"
+             x:Class="Ejercicio01.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <vmodel:ListadoPersonasVM/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Button 
+                Text="Eliminar"
+                Command="{Binding BtnEliminarCommand}"
+                ImageSource="papelera.png"
+                ContentLayout="Right, 10"
+                MaximumWidthRequest="125"
+                HeightRequest="40"> 
+            </Button>
+
+            <Label Text="{Binding PersonaSeleccionada.Nombre}"/>
+
+            <ListView
+             ItemsSource="{Binding ListaPersonas}"
+             HasUnevenRows="False"
+             RowHeight="80"
+            SelectedItem="{Binding PersonaSeleccionada}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Spacing="5">
+                                <Image Source="{Binding Foto}" HeightRequest="80" WidthRequest="80"></Image>
+                                <Label Text="{Binding NombreCompleto}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
