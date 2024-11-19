@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ENT01;
+<<<<<<< Updated upstream
 using Microsoft.Data.SqlClient;
 
 namespace DAL01
@@ -59,5 +60,21 @@ namespace DAL01
             return listadoPersonas;
 
         }
+=======
+
+namespace DAL01
+{
+    public  class ListadosDal
+    {
+
+        public static List<ClsPersona> ObtenerPersonas()
+        {
+
+
+
+            return null;
+        }
+
+>>>>>>> Stashed changes
     }
 }

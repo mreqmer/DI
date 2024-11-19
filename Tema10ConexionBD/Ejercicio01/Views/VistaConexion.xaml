@@ -10,6 +10,7 @@
         <vmodel:VistaConexionVM/>
     </ContentPage.BindingContext>
 
+<<<<<<< Updated upstream
     <ScrollView>
         <VerticalStackLayout>
             <Button Text="Conexion" Command="{Binding BtnConexionCommand}" />
@@ -27,11 +28,48 @@
                                    HasShadow="True">
                                 <Label Text="{Binding Nombre}" />
                             </Frame>
+=======
+    <VerticalStackLayout>
+        <Button
+            Text="Conexion"  
+             Command="{Binding BtnConexionCommand}"
+            > </Button>
+        <Label Text="{Binding Respuesta}"></Label>
+
+
+        <ScrollView>
+            <ListView x:Name="PersonaListView" 
+              ItemsSource="{Binding Personas}" 
+              HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Spacing="10">
+                                <!-- Foto de la persona (si existe) -->
+                                <Image Source="{Binding Foto}" HeightRequest="50" WidthRequest="50" IsVisible="{Binding Foto, Converter={StaticResource ByteArrayToImageVisibilityConverter}}"/>
+
+                                <!-- Nombre y Apellidos -->
+                                <Label Text="{Binding Nombre}" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Apellidos}" FontSize="16" />
+
+                                <!-- Datos adicionales -->
+                                <Label Text="{Binding Telefono}" />
+                                <Label Text="{Binding Direccion}" />
+                                <Label Text="{Binding FechaNacimiento, StringFormat='{0:dd/MM/yyyy}'}" />
+                            </StackLayout>
+>>>>>>> Stashed changes
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+<<<<<<< Updated upstream
         </VerticalStackLayout>
     </ScrollView>
 
+=======
+
+        </ScrollView>
+        
+    </VerticalStackLayout>
+>>>>>>> Stashed changes
 </ContentPage>
