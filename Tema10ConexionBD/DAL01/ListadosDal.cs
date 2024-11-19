@@ -10,7 +10,10 @@ namespace DAL01
 {
     public class ListadosDal
     {
-
+        /// <summary>
+        /// Conecta con la base de datos para devolver un listado de personas
+        /// </summary>
+        /// <returns></returns>
         public static List<ClsPersona> ObtieneListadoPersonasDal()
         {
             SqlConnection miConexion = new SqlConnection();
