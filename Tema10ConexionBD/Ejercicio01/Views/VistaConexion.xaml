@@ -10,11 +10,28 @@
         <vmodel:VistaConexionVM/>
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout>
-        <Button
-            Text="Conexion"  
-             Command="{Binding BtnConexionCommand}"
-            > </Button>
-        <Label Text="{Binding Respuesta}"></Label>
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Button Text="Conexion" Command="{Binding BtnConexionCommand}" />
+            <Label Text="{Binding Respuesta}" />
+
+            <ListView ItemsSource="{Binding ListadoDePersonas}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Margin="30, 10, 30, 20"
+                                   Padding="10"
+                                   BackgroundColor="#D9D9D9"
+                                   CornerRadius="10"
+                                   BorderColor="Transparent"
+                                   HasShadow="True">
+                                <Label Text="{Binding Nombre}" />
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
