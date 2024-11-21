@@ -21,17 +21,19 @@ namespace Ejercio01ASP.Controllers
         /// <returns></returns>
         public IActionResult Index()
         {
-            List<ClsPersona> listaPersonas = new List<ClsPersona>();
-            try
-            {
-                listaPersonas = ListadosDal.ObtieneListadoPersonasDal();
-                
-            }
-            catch (Exception ex)
-            {
-                //TODO mostrar error
-            }
-            return View(listaPersonas);
+
+            //List<ClsPersona> listaPersonas = new List<ClsPersona>();
+            //try
+            //{
+            //    listaPersonas = ListadosDal.ObtieneListadoPersonasDal();
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    TODO mostrar error
+            //}
+            //return View(listaPersonas);
+            return View();
 
         }
 
